@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>从源码编译安装nginx | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="从Nginx官网下载源码，并解压 其中，configure为可执行文件，是编译安装前的预备执行文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从源码编译安装nginx">
+<meta property="og:url" content="http://example.com/2018/10/05/%E4%BB%8E%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85nginx/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="从Nginx官网下载源码，并解压 其中，configure为可执行文件，是编译安装前的预备执行文件">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-10-05T07:49:37.000Z">
+<meta property="article:modified_time" content="2024-10-11T14:25:48.597Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Nginx">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-从源码编译安装nginx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/10/05/%E4%BB%8E%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85nginx/" class="article-date">
+  <time class="dt-published" datetime="2018-10-05T07:49:37.000Z" itemprop="datePublished">2018-10-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/">技术类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      从源码编译安装nginx
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>从<a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">Nginx官网</a>下载源码，并解压</p>
+<p>其中，<code>configure</code>为可执行文件，是编译安装前的预备执行文件<span id="more"></span></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设定Nginx的安装目录，并生成make文件</span></span><br><span class="line">./configure --prefix=/home/username/nginx</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<p>关于<code>configure</code>的具体参数，官网有给出详细<a target="_blank" rel="noopener" href="https://nginx.org/en/docs/configure.html">文档</a></p>
+<p>如果执行<code>make</code>时出现错误<code>make: *** No rule to make target &#39;build&#39;, needed by &#39;default&#39;.  Stop.</code>，则是因为缺少依赖。安装以下依赖后重新生成Makefile</p>
+<p>安装完成后，Nginx的二进制文件在<code>./sbin/</code>目录下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看Nginx版本</span></span><br><span class="line">./nginx -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看编译安装时的参数</span></span><br><span class="line">./nginx -V</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动Nginx</span></span><br><span class="line">./nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 快速关闭</span></span><br><span class="line">./nginx -s stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 优雅地关闭（官网原话：Graceful shutdown）</span></span><br><span class="line">./nginx -s quit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载配置文件</span></span><br><span class="line">./nginx -s reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新打开日志文件</span></span><br><span class="line">./nginx -s reopen</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试配置文件nginx.conf</span></span><br><span class="line">./nginx -t</span><br></pre></td></tr></table></figure>
+
+<p>Nginx启动时，可能会报错<br><code>nginx: [emerg] bind() to 0.0.0.0:80 failed (13: Permission denied)</code></p>
+<p>这是因为Nginx默认端口号是80，在Linux里，低于1024的端口（0~1024）被视为特权端口，只有root用户才被允许使用。所以以普通用户身份启动Nginx时，Nginx会尝试在80端口开启Web服务，但由于用户权限不够，出现<code>Permission denied</code></p>
+<p>所以，可以将nginx监听的80端口改成1024以上的端口</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server</span> <span class="string">&#123;</span></span><br><span class="line"><span class="comment">    #默认为80</span></span><br><span class="line">    <span class="attr">listen</span> <span class="string">8080;</span></span><br><span class="line"><span class="attr">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>即可通过<code>localhost:8080</code>访问Nginx页面</p>
+<p>但这个方法访问的URL必须使用端口号，不太方便。根据问题的原因，还有一种解决方法就是用root权限启动Nginx服务。但当我使用<code>sudo ./nginx</code>时，虽然Nginx服务启动了，用浏览器访问Nginx页面，却显示403 Forbidden，原因不明，只能另寻方法，赋予Nginx执行文件CAP_NET_BIND_SERVICE权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 后接路径为Nginx二进制文件路径</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">setcap</span> cap_net_bind_service=+ep /home/username/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="GCC——GNU编译器集合"><a href="#GCC——GNU编译器集合" class="headerlink" title="GCC——GNU编译器集合"></a>GCC——GNU编译器集合</h2><p>GCC可以使用默认包管理器的仓库（repositories）来安装，包管理器的选择依赖于你使用的Linux发布版本，包管理器有不同的实现：yum是基于Red Hat的发布版本；apt用于Debian和Ubuntu</p>
+<p>RedHat中安装GCC：<code>yum install gcc</code></p>
+<p>Ubuntu中安装GCC：<code>apt-get install gcc</code></p>
+<h2 id="PCRE库"><a href="#PCRE库" class="headerlink" title="PCRE库"></a>PCRE库</h2><p>Nginx编译需要PCRE（Perl Compatible Regular Expression），因为Nginx的Rewrite模块和HTTP核心模块会使用到PCRE正则表达式语法。这里需要安装两个安装包pcre和pcre-devel。第一个安装包提供编译版本的库，而第二个提供开发阶段的头文件和编译项目的源代码，这正是我们需要的理由</p>
+<p>RedHat中安装PCRE：<code>yum install pcre pcre-devel</code></p>
+<p>Ubuntu中安装PCRE：<code>apt-get install libpcre3 libpcre3-dev</code></p>
+<h2 id="zlib库"><a href="#zlib库" class="headerlink" title="zlib库"></a>zlib库</h2><p>zlib库提供了开发人员的压缩算法，在Nginx的各种模块中需要使用gzip压缩。如同安装PCRE一样，同样需要安装库和它的源代码：zlib和zlib-devel</p>
+<p>RedHat中安装zlib：<code>yum install zlib zlib-devel</code></p>
+<p>Ubuntu中安装zlib：<code>apt-get install zlib1g zlib1g-dev</code></p>
+<h2 id="OpenSSL库"><a href="#OpenSSL库" class="headerlink" title="OpenSSL库"></a>OpenSSL库</h2><p>在Nginx中，如果服务器提供安全网页时则会用到OpenSSL库，我们需要安装库文件和它的开发安装包（openssl和openssl-devel）</p>
+<p>RedHat中安装OpenSSL：<code>yum install openssl openssl-devel</code></p>
+<p>Ubuntu中安装OpenSSL：<code>apt-get install openssl openssl-dev</code>（注：Ubuntu14.04的仓库中没有发现openssl-dev）</p>
+<!--
+参考文献：[【1】](https://zhuanlan.zhihu.com/p/696566840) [【2】](https://www.cnblogs.com/fengzifengfeng/p/9805655.html) [【3】](https://blog.csdn.net/qq_59833893/article/details/134313570)
+-->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2018/10/05/%E4%BB%8E%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85nginx/" data-id="cm24w9qtp000kfkt97wwf9h6g" data-title="从源码编译安装nginx" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/12/%E8%A7%A3%E5%86%B3%E5%AE%89%E8%A3%85MySQL%E6%97%B6%E6%B2%A1%E6%9C%89%E8%AE%BE%E7%BD%AEroot%E5%AF%86%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          解决安装MySQL时没有设置root密码的问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/17/LNMP%E7%9A%84%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LNMP的安装及配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%80%E4%BA%9B%E6%AE%B5%E8%90%BD/">一些段落</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD/">只言片语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/">技术类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB-%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD-%E4%B8%80%E4%BA%9B%E6%AE%B5%E8%90%BD/">技术类/只言片语/一些段落</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Minecraft/" rel="tag">Minecraft</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OneDrive/" rel="tag">OneDrive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thunderbird/" rel="tag">Thunderbird</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-Get/" rel="tag">You-Get</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrpa/" rel="tag">unrpa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%90%E6%A7%BD/" rel="tag">吐槽</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/" rel="tag">注册表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%88%E7%AB%AF/" rel="tag">终端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Github/" style="font-size: 12.5px;">Github</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 10px;">Minecraft</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 15px;">Nginx</a> <a href="/tags/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Thunderbird/" style="font-size: 10px;">Thunderbird</a> <a href="/tags/Windows/" style="font-size: 17.5px;">Windows</a> <a href="/tags/You-Get/" style="font-size: 10px;">You-Get</a> <a href="/tags/unrpa/" style="font-size: 10px;">unrpa</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;">前端</a> <a href="/tags/%E5%90%90%E6%A7%BD/" style="font-size: 10px;">吐槽</a> <a href="/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/" style="font-size: 12.5px;">注册表</a> <a href="/tags/%E7%BB%88%E7%AB%AF/" style="font-size: 12.5px;">终端</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 12.5px;">网络</a> <a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 12.5px;">美化</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/11/240929/">只言片语</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/11/241011/">只言片语</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/19/%E8%A7%A3%E5%86%B3%E6%A0%A1%E5%9B%AD%E7%BD%91%E6%89%BE%E4%B8%8D%E5%88%B0github-com%E4%B8%BB%E6%9C%BA/">解决校园网找不到github.com主机</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/01/%E5%B0%86%E5%86%9B/">将军</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/20/%E4%B8%8D%E5%8F%AF%E5%90%8D%E7%8A%B6%E4%B9%8B%E7%89%A9/">不可名状之物</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

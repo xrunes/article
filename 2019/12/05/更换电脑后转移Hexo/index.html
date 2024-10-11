@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>更换电脑后转移Hexo | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="之前一直考虑Hexo的异地更新问题，例如在下午学校电脑上更新一篇文章后，晚上回家要在下午更新的那篇文章的基础上，再更新一篇文章。这种情况下同步是主要要解决的问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="更换电脑后转移Hexo">
+<meta property="og:url" content="http://example.com/2019/12/05/%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E5%90%8E%E8%BD%AC%E7%A7%BBHexo/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="之前一直考虑Hexo的异地更新问题，例如在下午学校电脑上更新一篇文章后，晚上回家要在下午更新的那篇文章的基础上，再更新一篇文章。这种情况下同步是主要要解决的问题。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-05T12:30:29.000Z">
+<meta property="article:modified_time" content="2024-10-11T14:28:16.212Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-更换电脑后转移Hexo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/12/05/%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E5%90%8E%E8%BD%AC%E7%A7%BBHexo/" class="article-date">
+  <time class="dt-published" datetime="2019-12-05T12:30:29.000Z" itemprop="datePublished">2019-12-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/">技术类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      更换电脑后转移Hexo
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>之前一直考虑Hexo的异地更新问题，例如在下午学校电脑上更新一篇文章后，晚上回家要在下午更新的那篇文章的基础上，再更新一篇文章。这种情况下同步是主要要解决的问题。<span id="more"></span></p>
+<p>当新建Hexo文件夹的时候，可以发现hexo init的时候会创建一个.gitignore文件。众所周知.gitignore文件的用途是Git添加到工作区、暂存区的时候忽略项目中文件名包含在.gitignore里的文件。那么官方的意思就很明显了，让我们使用Git来对这个文件夹进行管理，而Git的拿手好戏正是检查项目版本的异同，更改情况，然后更新，同步。</p>
+<p>了解这一点之后，我们就可以使用Github或Coding或其他的代码托管平台进行异地同步Hexo。还有一点是，Github和Coding都有部署静态页面的Pages页面对Hexo这种博客网站有着天生的契合性。</p>
+<p>首先在Github或Coding上建立两个项目（也有说法可以同一个项目设置两个branch，但由于还没测试成功过，所以不在此讨论），分别储存Hexo配置文件夹（暂命名为master）和部署的静态网站页面（即hexo g命令部署出来的public&#x2F;文件夹里的页面，暂命名为blog）。然后更改master里的_config.yml配置文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="comment">#blog仓库ssh地址</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="comment">#主分支master</span></span><br></pre></td></tr></table></figure>
+
+<p>以上是更改部署方式为git，通过git部署到blog仓库。但是使用git部署方式需要安装npm的git部署插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>另外，如果你的博客是主域名是一个主页，博客放在另一个文件夹里，例如主域名domian.com存放的不是博客而是一个类似聚合页面的主页，博客放在domain.com&#x2F;blog页面里，这时候可能hexo s测试时页面加载正确，但部署后会发现css没有加载，这个时候要更改master里的_config.yml：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">root:</span> <span class="string">/blog/</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在另一台电脑上，首先克隆master仓库（添加ssh之类的基础操作不作说明。blog仓库主要是部属用，本地无需修改，以后更改也只是更改master仓库的内容，因此只需克隆这一个仓库即可。）</p>
+<p>因为Hexo需要Node.js，所以要先安装Node.js。然后安装Hexo：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>然后需要在项目文件夹里安装Hexo，以代替hexo init这一步：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --save</span><br></pre></td></tr></table></figure>
+
+<p>如果这个时候没有安装Hexo就使用Hexo命令例如hexo s，会提示有错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">ERROR Local hexo not found <span class="keyword">in</span> ~\Desktop\hexo</span><br><span class="line">ERROR Try running: <span class="string">&#x27;npm install hexo --save&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>提示中也告知了解决方法。</p>
+<p>等安装完毕再执行hexo s，也许会报错，也可能没有，原因是有的主题会需要依赖没有安装。这时候就回归之前写的一篇文章了，以maupassant主题为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">$ cnpm install hexo-renderer-pug --save</span><br><span class="line">$ cnpm install hexo-renderer-sass --save</span><br></pre></td></tr></table></figure>
+
+<p>这样就能同步之前所有的配置，并继续之前的进度。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/12/05/%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%E5%90%8E%E8%BD%AC%E7%A7%BBHexo/" data-id="cm24w9qu1001lfkt944gifm89" data-title="更换电脑后转移Hexo" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/09/Windows%E4%B8%8BLinux%E5%AD%90%E7%B3%BB%E7%BB%9F%E6%9B%B4%E6%94%B9%E8%BD%AF%E4%BB%B6%E6%BA%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Windows下Linux子系统更改软件源
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/29/Hexo%E5%AE%89%E8%A3%85maupassant%E4%B8%BB%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo安装maupassant主题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B8%80%E4%BA%9B%E6%AE%B5%E8%90%BD/">一些段落</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD/">只言片语</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/">技术类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB-%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD-%E4%B8%80%E4%BA%9B%E6%AE%B5%E8%90%BD/">技术类/只言片语/一些段落</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Minecraft/" rel="tag">Minecraft</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OneDrive/" rel="tag">OneDrive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thunderbird/" rel="tag">Thunderbird</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/You-Get/" rel="tag">You-Get</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unrpa/" rel="tag">unrpa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%90%E6%A7%BD/" rel="tag">吐槽</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/" rel="tag">注册表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%88%E7%AB%AF/" rel="tag">终端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BE%8E%E5%8C%96/" rel="tag">美化</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Github/" style="font-size: 12.5px;">Github</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Minecraft/" style="font-size: 10px;">Minecraft</a> <a href="/tags/MySQL/" style="font-size: 12.5px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 15px;">Nginx</a> <a href="/tags/OneDrive/" style="font-size: 10px;">OneDrive</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Thunderbird/" style="font-size: 10px;">Thunderbird</a> <a href="/tags/Windows/" style="font-size: 17.5px;">Windows</a> <a href="/tags/You-Get/" style="font-size: 10px;">You-Get</a> <a href="/tags/unrpa/" style="font-size: 10px;">unrpa</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 12.5px;">前端</a> <a href="/tags/%E5%90%90%E6%A7%BD/" style="font-size: 10px;">吐槽</a> <a href="/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/" style="font-size: 12.5px;">注册表</a> <a href="/tags/%E7%BB%88%E7%AB%AF/" style="font-size: 12.5px;">终端</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 12.5px;">网络</a> <a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 12.5px;">美化</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/11/240929/">只言片语</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/11/241011/">只言片语</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/19/%E8%A7%A3%E5%86%B3%E6%A0%A1%E5%9B%AD%E7%BD%91%E6%89%BE%E4%B8%8D%E5%88%B0github-com%E4%B8%BB%E6%9C%BA/">解决校园网找不到github.com主机</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/01/%E5%B0%86%E5%86%9B/">将军</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/20/%E4%B8%8D%E5%8F%AF%E5%90%8D%E7%8A%B6%E4%B9%8B%E7%89%A9/">不可名状之物</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
